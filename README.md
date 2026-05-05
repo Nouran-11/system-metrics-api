@@ -291,6 +291,7 @@ Completed:
 - Local Docker run
 - GitHub Actions CI workflow
 - Trivy image scanning
+- Remediation of vulnerable Netty dependencies detected by Trivy
 
 In progress:
 
