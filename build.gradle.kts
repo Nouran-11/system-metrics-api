@@ -6,18 +6,26 @@ plugins {
 group = "com.nouran"
 version = "1.0-SNAPSHOT"
 
+val ktorVersion = "2.3.5"
+val kotlinVersion = "1.9.20"
+val nettyVersion = "4.1.132.Final"
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core:2.3.5")
-    implementation("io.ktor:ktor-server-netty:2.3.5")
-    implementation("io.ktor:ktor-server-content-negotiation:2.3.5")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
-    testImplementation("io.ktor:ktor-server-test-host:2.3.5")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.20")
+    implementation("io.netty:netty-codec-http:$nettyVersion")
+    implementation("io.netty:netty-codec-http2:$nettyVersion")
+    implementation("io.netty:netty-handler:$nettyVersion")
+
+    testImplementation("io.ktor:ktor-server-test-host:$ktorVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
 
 java {
